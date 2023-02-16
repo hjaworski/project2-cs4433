@@ -19,7 +19,7 @@ public class KMeans {
         private List<List<Double>> centroids = new ArrayList<List<Double>>();
 
         public void setup(Context context) throws IOException{
-            Path centroidsPath = new Path(context.getConfiguration().get("csv file"));
+            Path centroidsPath = new Path(context.getConfiguration().get("seeds file"));
             List<String> centroidLines = Fileutil.readLines(new File(CentroidsPath.toString()));
             for (String line : centroidLines){
                 String[] fields = line.split(",");
@@ -27,7 +27,9 @@ public class KMeans {
                 for (int i = 0; i < fields.length; i++){
                     centroid.add(Double.parseDouble(fields[i]));
                 }
+                centroids.add(centroid);
             }
         }
+        public void map(Object key, Text value, Context context)
     }
 }
