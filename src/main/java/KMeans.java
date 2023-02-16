@@ -32,4 +32,12 @@ public class KMeans {
         }
         public void map(Object key, Text value, Context context)
     }
-}
+// the following goes in a test file. select with code two csvs are beign used. - hj
+    public void TaskA() throws Exception{
+        //1 second
+        String[] input = new String[2];
+        input[0] = "/home/aidan/codinShit/CS4433Project1WORKING/java/src/main/resources/MyPage.csv";
+        input[1] = "/home/aidan/codinShit/CS4433Project1WORKING/java/output/taskA";
+
+        CanadaCanadaCanada.main(input);
+    }}
