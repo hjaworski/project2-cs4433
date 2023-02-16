@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.Configuration.*;
+
 import javax.security.auth.login.Configuration;
 
 public class OptimizationKMeans {
@@ -66,7 +66,7 @@ public class OptimizationKMeans {
     }
     public static void main(String[] args) throws Exception{
         Configuration conf = new Configuration;
-        Job job = Job.getInstance(Configuration, "kmeans MapReduce");
+        Job job = Job.getInstance(conf    "kmeans MapReduce");
         job.setJarByClass(OptimizationKMeans.class);
         job.setMapperClass(Map1.class);
         job.setCombinerClass(Combine.class);
