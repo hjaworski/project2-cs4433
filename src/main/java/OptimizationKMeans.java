@@ -25,7 +25,6 @@ public class OptimizationKMeans {
             word.set(x + "," + y);
             context.write(new IntWritable(nearestCentroid), word);
         }
-
         private int findNearestCentroid(double x, double y){
 // algerbraic calculations
             return 1;
