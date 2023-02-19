@@ -51,66 +51,6 @@ import java.util.Random;
 //        CanadaCanadaCanada.main(input);
 //    }
 
-//public static class Coordinate implements Writable {
-//
-//    public int x;
-//    public int y;
-//    public int weight;
-//
-//    public Coordinate() {
-//        x = 0;
-//        y = 0;
-//    }
-//
-//    public Coordinate(int x, int y) {
-//        this.x = x;
-//        this.y = y;
-//        weight = 1;
-//    }
-//
-//    public Coordinate(int x, int y, int weight) {
-//        this.x = x;
-//        this.y = y;
-//        this.weight = weight;
-//    }
-//
-//    @Override
-//    public void write(DataOutput dataOutput) throws IOException {
-//        dataOutput.writeInt(x);
-//        dataOutput.writeInt(y);
-//        dataOutput.writeInt(weight);
-//    }
-//
-//    @Override
-//    public void readFields(DataInput dataInput) throws IOException {
-//        x = dataInput.readInt();
-//        y = dataInput.readInt();
-//        weight = dataInput.readInt();
-//    }
-//
-//    public double distance(Coordinate other) {
-//        return Math.hypot(x - other.x, y - other.y);
-//    }
-//
-//    public String toString(){
-//        return x+","+y+","+weight;
-//    }
-//
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Coordinate that = (Coordinate) o;
-//        return x == that.x && y == that.y;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(x, y);
-//    }
-//}
-
-}
 public class KMeans {
 
     public static class Point {
@@ -259,8 +199,9 @@ public class KMeans {
         job.setReducerClass(CentroidRecalculatorReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
-        FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileInputFormat.addInputPath(job, new Path("/Users/danteamicarella/Documents/GitHub/project2-cs4433/data.csv"));
+        FileInputFormat.addInputPath(job, new Path("/Users/danteamicarella/Documents/GitHub/project2-cs4433/seeds.csv"));
+        FileOutputFormat.setOutputPath(job, new Path("/Users/danteamicarella/Documents/GitHub/project2-cs4433/KMeansOutput"));
 
         // run job
         job.waitForCompletion(true);
