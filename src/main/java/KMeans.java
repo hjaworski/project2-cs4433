@@ -113,7 +113,7 @@ import java.util.Random;
 }
 public class KMeans {
 
-    public static class Point {
+    public static class Poin {
         float x;
         float y;
 
